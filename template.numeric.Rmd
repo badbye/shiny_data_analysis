@@ -1,0 +1,17 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+
+```{r distribution, comment=''}
+summary(data$data)
+```
+
+```{r hist, echo=FALSE}
+hist(data$data, breaks = 30, main=paste0('Histgram of ', data$name), xlab='')
+```
+

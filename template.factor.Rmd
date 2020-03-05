@@ -1,0 +1,12 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+
+```{r distribution, comment=''}
+summary(data$data)
+```
