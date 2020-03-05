@@ -5,3 +5,10 @@
 - `template.factor.Rmd`: 对 factor 类型数据分析的模板
 
 - `template.numeric.Rmd`: 对 numeric 类型数据分析的模板
+
+代码抄自 https://mastering-shiny.org/。
+
+测试：
+```r
+shiny::runGitHub('badbye/shiny_data_analysis')
+```
