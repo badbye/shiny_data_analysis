@@ -1,12 +1,15 @@
 library(shiny)
 
 make_ui <- function(x, var) {
+  na_num = sum(is.na(x))
   if (is.numeric(x)) {
     rng <- range(x, na.rm = TRUE)
-    sliderInput(var, var, min = rng[1], max = rng[2], value = rng)
+    sliderInput(var, ifelse(na_num == 0, var, sprintf('%s (缺失数量: %s)', var, na_num)), 
+                min = floor(rng[1]), max = ceiling(rng[2]), value = rng)
   } else if (is.factor(x)) {
     levs <- levels(x)
-    selectInput(var, var, choices = levs, selected = levs, multiple = TRUE)
+    selectInput(var, ifelse(na_num == 0, var, sprintf('%s (缺失数量: %s)', var, na_num)), 
+                choices = levs, selected = levs, multiple = TRUE)
   } else {
     # Not supported
     NULL

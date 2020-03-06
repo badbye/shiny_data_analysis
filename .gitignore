@@ -2,3 +2,4 @@ useless.R
 *.Rproj
 .Rproj.user/
 index.html
+data.csv
