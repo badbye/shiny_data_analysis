@@ -28,10 +28,14 @@ server <- function(input, output, session) {
             nrow(filteredData())
             )
   })
-  output$data <- DT::renderDataTable({
-    DT::datatable(filteredData())
+  output$table <- DT::renderDT({
+    DT::datatable(filteredData(), filter = "top",
+                  options = list(stateSave = TRUE))
   })
   
+  observeEvent(input$table_state, {
+    print(input$table_state)
+  })
   # --------------------------- 分析 --------------------------- #
   output$col <- renderUI({
     selectInput('selectedColumn', label='选择变量', 

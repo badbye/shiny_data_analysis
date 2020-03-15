@@ -8,7 +8,7 @@ ui <- fluidPage(
     ),
     mainPanel(
       tabsetPanel(
-        tabPanel("数据",  DT::dataTableOutput("data")),
+        tabPanel("数据",  DT::dataTableOutput("table")),
         tabPanel("分析",  
                  uiOutput("col"),
                  uiOutput('analysis')
